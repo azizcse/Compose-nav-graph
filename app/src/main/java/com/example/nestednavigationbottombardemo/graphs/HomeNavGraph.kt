@@ -17,7 +17,7 @@ fun HomeNavGraph(navController: NavHostController) {
         startDestination = BottomBarScreen.Home.route
     ) {
         composable(route = BottomBarScreen.Home.route) {
-            ScreenContent(
+            ScreenContent(navController,
                 name = BottomBarScreen.Home.route,
                 onClick = {
                     navController.navigate(Graph.DETAILS)
@@ -25,13 +25,13 @@ fun HomeNavGraph(navController: NavHostController) {
             )
         }
         composable(route = BottomBarScreen.Profile.route) {
-            ScreenContent(
+            ScreenContent(navController,
                 name = BottomBarScreen.Profile.route,
                 onClick = { }
             )
         }
         composable(route = BottomBarScreen.Settings.route) {
-            ScreenContent(
+            ScreenContent(navController,
                 name = BottomBarScreen.Settings.route,
                 onClick = { }
             )
@@ -46,12 +46,12 @@ fun NavGraphBuilder.detailsNavGraph(navController: NavHostController) {
         startDestination = DetailsScreen.Information.route
     ) {
         composable(route = DetailsScreen.Information.route) {
-            ScreenContent(name = DetailsScreen.Information.route) {
+            ScreenContent(navController,name = DetailsScreen.Information.route) {
                 navController.navigate(DetailsScreen.Overview.route)
             }
         }
         composable(route = DetailsScreen.Overview.route) {
-            ScreenContent(name = DetailsScreen.Overview.route) {
+            ScreenContent(navController,name = DetailsScreen.Overview.route) {
                 navController.popBackStack(
                     route = DetailsScreen.Information.route,
                     inclusive = false
