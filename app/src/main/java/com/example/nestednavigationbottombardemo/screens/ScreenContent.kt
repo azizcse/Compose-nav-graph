@@ -40,7 +40,9 @@ fun ScreenContent(navController: NavHostController, name: String, onClick: () ->
                 elevation = 10.dp
             ) {
                 Text(
-                    modifier = Modifier.clickable { onClick() }.padding(10.dp),
+                    modifier = Modifier
+                        .clickable { onClick() }
+                        .padding(10.dp),
                     text = name,
                     fontSize = MaterialTheme.typography.h3.fontSize,
                     fontWeight = FontWeight.Bold

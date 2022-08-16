@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.nestednavigationbottombardemo.BottomBarScreen
 import com.example.nestednavigationbottombardemo.screens.ScreenContent
+import com.example.nestednavigationbottombardemo.screens.home.HomeContent
 
 @Composable
 fun HomeNavGraph(navController: NavHostController) {
@@ -17,7 +18,7 @@ fun HomeNavGraph(navController: NavHostController) {
         startDestination = BottomBarScreen.Home.route
     ) {
         composable(route = BottomBarScreen.Home.route) {
-            ScreenContent(navController,
+            HomeContent(navController,
                 name = BottomBarScreen.Home.route,
                 onClick = {
                     navController.navigate(Graph.DETAILS)

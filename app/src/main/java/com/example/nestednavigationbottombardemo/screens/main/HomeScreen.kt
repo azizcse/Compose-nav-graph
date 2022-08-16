@@ -1,4 +1,4 @@
-package com.example.bottomnavbardemo.screens.home
+package com.example.bottomnavbardemo.screens.main
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.*
